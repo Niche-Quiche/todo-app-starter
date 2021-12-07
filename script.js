@@ -1,30 +1,54 @@
-// add items marked 'completed' to the completed section of the to do app
 
-function addCompleted (task) {
-    const li = document.createElement("li");
-    // assign task to li 
-    li.innerHTML = task;
-    //find completed items lists with id
-    const ul = document.querySelector('#complete-items')
-    ul.appendChild(li);
+function completedItemsList(item) {
+    const newListItem = document.createElement("li");
+    newListItem.innerHTML = item;
+    
+
+    const newInput = document.createElement("input");
+
+
+    newInput.classList.add("form-check-input"); 
+    newInput.setAttribute("type", "checkbox");
+    newListItem.appendChild(newInput)
+    newListItem.className = "list-group-item"
+
+    
+    const list = document.querySelector("#complete-items")
+    
+    // append to list
+    list.appendChild(newListItem)
 }
 
-addCompleted(todoItems[0].title)
-addCompleted(todoItems[1].title)
-addCompleted(todoItems[2].title)
+completedItemsList(todoItems[0].title)
+completedItemsList(todoItems[1].title)
+completedItemsList(todoItems[2].title)
 
 
-// add items marked 'incomplete' to the completed section of the to do app
+function incompletedItemsList(item) {
+    const newListItem = document.createElement("li");
+    newListItem.innerHTML = item;
 
-function addInCompleted (task) {
-    const li = document.createElement("li");
-    // assign task to li 
-    li.innerHTML = task;
-    //find completed items lists with id
-    const ul = document.querySelector('#incomplete-items')
-    ul.appendChild(li);
+    const newInput = document.createElement("input");
+
+    newInput.classList.add("form-check-input"); 
+    newInput.setAttribute("type", "checkbox");
+    newListItem.appendChild(newInput)
+    newListItem.className = "list-group-item"
+
+    const list = document.querySelector("#incomplete-items")
+    
+    // append to list
+    list.appendChild(newListItem)
 }
 
-addInCompleted(todoItems[3].title)
-addInCompleted(todoItems[4].title)
-addInCompleted(todoItems[5].title)
+incompletedItemsList(todoItems[0].title)
+incompletedItemsList(todoItems[1].title)
+incompletedItemsList(todoItems[2].title)
+
+
+const newItemForm = document.querySelector("todoItems.title")
+
+    newItemForm.addEventListener('submit', function(event) {
+        event.preventDefault()
+
+    })
